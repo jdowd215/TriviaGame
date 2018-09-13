@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trivia Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Trivia Game</h1>
+          <p class="lead">Select an answer to each question before time runs out!</p>
+        </div>
+      </div>
+
+<!-- Timer -->
+<div>
+<h3 class="time">Time Remaining: </h3>
+</div>
+<br>
+
+<!-- Questions -->
+<div id="results">
+<form name="quizForm">
+<p class="question">1. Who was the only President to serve more than two terms?</p>
+	<ul>
+	    <input class="answer" type="radio" name="q1" value="1">
+	        <label id="correctString1">Franklin D. Roosevelt</label>
+	    <br>
+	    <input class="answer" type="radio" name="q1" value="0">
+	        <label>George Washingon</label>
+	    <br>
+	    <input class="answer" type="radio" name="q1" value="0">
+	        <label>Ulysses S. Grant</label>
+	    <br>
+	    <input class="answer" type="radio" name="q1" value="0">
+	        <label>Theodore Roosevelt</label>
+    </ul>
+</div>
+    
+<div>
+<p class="question">2. How many future presidents signed the Declaration of Independence?</p>
+    <ul>
+        <input class="answer" type="radio" name="q2" value="0">
+            <label>3</label>
+        <br>
+        <input class="answer" type="radio" name="q2" value="1">
+            <label id="correctString2">2</label>
+        <br>
+        <input class="answer" type="radio" name="q2" value="0">
+            <label>4</label>
+        <br>
+        <input class="answer" type="radio" name="q2" value="0">
+            <label>1</label>
+    </ul>
+</div>
+
+<div>
+<p class="question">3. Who was the first President to win the Nobel Peace Prize?</p>
+    <ul>
+        <input class="answer" type="radio" name="q3" value="0">
+            <label>Woodrow Wilson</label>
+    <br>
+        <input class="answer" type="radio" name="q3" value="1">
+            <label id="correctString3">Theodore Roosevelt</label>
+    <br>
+        <input class="answer" type="radio" name="q3" value="0">
+            <label>Jimmy Carter</label>
+    <br>
+        <input class="answer" type="radio" name="q3" value="0">
+            <label>Barack Obama</label>
+    </ul>
+</div>
+
+<div>
+<p class="question">4. Who was the only President to serve two non-consecutive terms?</p>
+    <ul>
+        <input class="answer" type="radio" name="q4" value="0">
+            <label>Theodore Roosevelt</label>
+    <br>
+        <input class="answer" type="radio" name="q4" value="1">
+            <label id="correctString4">Grover Cleveland</label>
+    <br>
+        <input class="answer" type="radio" name="q4" value="0">
+            <label>Woodrow Wilson</label>
+    <br>
+        <input class="answer" type="radio" name="q4" value="0">
+            <label>Ronald Reagan</label>
+    </ul>
+</div>
+</form>
+</div>
+<br/>
+  <div class="submitter">
+          <input class="quizSubmit" id="submitButton" onClick="submitQuiz()"
+          type="submit" value="Submit" />
+    </div>
+  
+<!--show only wrong answers on submit-->
+    <div class="quizAnswers" id="correctAnswer1"></div>
+	    <div class="quizAnswers" id="correctAnswer2"></div>
+    <div class="quizAnswers" id="correctAnswer3"></div>
+    <div class="quizAnswers" id="correctAnswer4"></div>
+
+<!--show score upon submit-->
+    <div>
+    	<h2 class="quizScore" id="userScore"></h2>
+    </div>
+	</div>
+
+	
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        
+        <script src="assets/javascript/app.js"></script>
+
+</body>
