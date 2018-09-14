@@ -11,55 +11,56 @@
 //#3. User either clicks "done" or timer runs to 0, screen displays the # of 
         //correct, incorrect, and incomplete answers
 
+        
+        var number = 20;
+
+        //  Variable that will hold our interval ID when we execute
+        //  the "run" function
+        var intervalId;
+    
+        //  The run function sets an interval
+        //  that runs the decrement function once a second.
+        //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
+        function run() {
+          clearInterval(intervalId);
+          intervalId = setInterval(decrement, 2000);
+        }
+    
+        //  The decrement function.
+        function decrement() {
+    
+          //  Decrease number by one.
+          number--;
+          console.log(number);
+    
+          //  Show the number
+          $(".time").text("Time Remaining: " + number);
+    
+          //  Once number hits zero...
+          if (number === 0) {
+    
+            //  ...run the stop function.
+            stop();
+    
+            //  Alert the user that time is up.
+            alert("Time is up, press submit to see your score!");
+          }
+        }
+    
+        //  The stop function
+        function stop() {
+    
+          //  Clears our intervalId
+          //  We just pass the name of the interval
+          //  to the clearInterval function.
+          clearInterval(intervalId);
+        }
+    
+        //  Execute the run function.
+        run();
 
 //start game function
 function submitQuiz() {
-    var number = 20;
-
-    //  Variable that will hold our interval ID when we execute
-    //  the "run" function
-    var intervalId;
-
-    //  The run function sets an interval
-    //  that runs the decrement function once a second.
-    //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
-    function run() {
-      clearInterval(intervalId);
-      intervalId = setInterval(decrement, 2000);
-    }
-
-    //  The decrement function.
-    function decrement() {
-
-      //  Decrease number by one.
-      number--;
-      console.log(number);
-
-      //  Show the number
-      $(".time").text("Time Remaining: " + number);
-
-      //  Once number hits zero...
-      if (number === 0) {
-
-        //  ...run the stop function.
-        stop();
-
-        //  Alert the user that time is up.
-        alert("Time is up, press submit to see your score!");
-      }
-    }
-
-    //  The stop function
-    function stop() {
-
-      //  Clears our intervalId
-      //  We just pass the name of the interval
-      //  to the clearInterval function.
-      clearInterval(intervalId);
-    }
-
-    //  Execute the run function.
-    run();
 
 // get each answer score
     function answerScore (qName) {
@@ -116,7 +117,7 @@ function submitQuiz() {
     var showScore = "Your Score: " + calcScore +"/" + questionCounter;
 // if 4/4, "perfect score!"
     if (calcScore === questionCounter) {
-        showScore = showScore + "&nbsp; <strong>Perfect Score!</strong>"
+        showScore = showScore + " Perfect Score!"
     };
     document.getElementById('userScore').innerHTML = showScore;
 }
